@@ -11,3 +11,7 @@ export const createUser = (req, res) => {
   users.push({ ...user, id: uuid() });
   res.send("User Added Successfully");
 };
+export const singleUser = (req, res) => {
+  const singleuser = users.find((user) => user.id === req.params.id);
+  res.send(singleuser);
+};
